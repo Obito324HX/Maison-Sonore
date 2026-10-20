@@ -1,9 +1,8 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Maison Sonore is a full-service recording studio and record label. Recording, mixing, mastering and releases.">
+<meta name="description" content="Maison Sonore: recording, mixing and mastering studio. Hear the catalogue, meet the artists and book a session.">
 <title>Maison Sonore</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400..700&family=Syne:wght@500..800&display=swap">
@@ -261,6 +260,23 @@ main,footer{position:relative;z-index:2}
 .gear li span{font:500 .7rem/1.7 var(--f-mono);color:var(--muted);white-space:nowrap}
 @media(max-width:800px){.gear{grid-template-columns:1fr}}
 
+.spec{margin-top:clamp(28px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px}
+.spec>span{font:500 .7rem/1 var(--f-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+.spec button{font:500 .7rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;padding:12px 16px;border:1px solid var(--line-2);border-radius:999px;color:var(--bone);display:inline-flex;gap:8px;align-items:center;transition:background .25s,border-color .25s,color .25s}
+.spec button:hover,.spec button:focus-visible{background:var(--acc);border-color:var(--acc);color:var(--on-acc)}
+.team{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,32px)}
+.eng{border:1px solid var(--line);border-radius:6px;padding:clamp(20px,2.4vw,30px);display:grid;gap:16px;align-content:start;background:color-mix(in srgb,var(--bone) 3%,transparent)}
+.eng .mono{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;font:400 1.9rem/1 var(--f-serif);color:var(--on-acc);background:linear-gradient(135deg,var(--acc),var(--acc2))}
+.eng h3{font:700 1.35rem/1.1 var(--f-display);text-transform:uppercase;letter-spacing:-.02em}
+.eng .role{font:500 .7rem/1.4 var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--acc)}
+.eng p{color:var(--muted);font-size:.98rem}
+.eng .credits{display:flex;flex-wrap:wrap;gap:6px}
+.eng .credits span{font:500 .6rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:6px 8px;border-radius:2px}
+.eng a{font:500 .72rem/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--bone);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:6px;justify-self:start}
+.eng a:hover{color:var(--acc);border-color:var(--acc)}
+.team-cap{margin-top:22px;font:500 .72rem/1.6 var(--f-mono);letter-spacing:.06em;color:var(--muted)}
+@media(max-width:900px){.team{grid-template-columns:1fr}}
+
 /* rates */
 .pk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line-2);overflow:hidden}
 .pack{padding:clamp(24px,3.2vw,44px);display:flex;flex-direction:column;gap:20px;border-left:1px solid var(--line-2);background:var(--bg-2)}
@@ -376,25 +392,24 @@ body.has-dock .legal{padding-bottom:calc(112px + env(safe-area-inset-bottom,0px)
 @media(pointer:coarse){.ring{display:none}}
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
-[hidden]{display:none!important}
-img{max-width:100%}
+
+[hidden]{display:none!important}img{max-width:100%}
 </style>
-</head>
-<body>
+</head><body>
 
 
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Maison Sonore, home"><span class="rec" aria-hidden="true"></span><span data-brand>Maison Sonore</span></a>
     <nav class="links" aria-label="Main">
-      <a href="#songs">Songs</a><a href="#artists">Artists</a><a href="#services">Services</a><a href="#desk">The desk</a><a href="#studio">Studio</a><a href="#rates">Rates</a>
+      <a href="#songs">Songs</a><a href="#artists">Artists</a><a href="#services">Services</a><a href="#desk">The desk</a><a href="#studio">Studio</a><a href="#team">Team</a><a href="#rates">Rates</a>
     </nav>
     <a class="btn btn-primary" href="#book">Book a session</a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="drawer">Menu</button>
   </div>
 </header>
 <div class="drawer" id="drawer">
-  <a href="#songs">Songs</a><a href="#artists">Artists</a><a href="#services">Services</a><a href="#desk">The desk</a><a href="#studio">Studio</a><a href="#rates">Rates</a><a href="#book" style="color:var(--acc)">Book a session</a>
+  <a href="#songs">Songs</a><a href="#artists">Artists</a><a href="#services">Services</a><a href="#desk">The desk</a><a href="#studio">Studio</a><a href="#team">Team</a><a href="#rates">Rates</a><a href="#book" style="color:var(--acc)">Book a session</a>
 </div>
 
 <main id="top">
@@ -542,6 +557,21 @@ img{max-width:100%}
         <div><h4>Monitoring</h4><ul><li>Studio monitors <span>8 in</span></li><li>Sub <span>10 in</span></li><li>Headphones <span>×6</span></li><li>Small speakers for phone-style checks <span>×1</span></li></ul></div>
         <div><h4>Processing</h4><ul><li>Hardware compressor <span>×2</span></li><li>Tube preamp <span>×2</span></li><li>Plate and room reverbs <span>software</span></li><li>Pitch and tuning tools <span>software</span></li></ul></div>
       </div>
+      <div class="spec" id="spec"><span>Room spec sheets</span>
+        <button type="button" data-spec="live">Live room</button><button type="button" data-spec="control">Control room</button><button type="button" data-spec="booth">Vocal booth</button><button type="button" data-spec="lounge">Lounge</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="team" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head rv"><div class="eyebrow">The team</div><h2 class="display">The people <em>behind the desk.</em></h2><p>Every session is led by an engineer who stays with your project from the first take to the final master.</p></div>
+      <div class="team">
+        <article class="eng"><div class="mono" aria-hidden="true">TM</div><div><div class="role">Chief engineer &middot; Mixing</div><h3>Theo Marlowe</h3></div><p>Twelve years mixing records across pop, R&amp;B and hip hop. Known for clean low end and vocals that sit forward without sounding forced.</p><div class="credits"><span>Mixing</span><span>Vocal production</span><span>Mix revisions</span></div><a href="#book">Book with Theo</a></article>
+        <article class="eng"><div class="mono" aria-hidden="true">SI</div><div><div class="role">Producer &middot; Recording</div><h3>Sasha Idris</h3></div><p>Runs tracking sessions and builds beats from scratch. Works well with first-time artists and gets a confident vocal take quickly.</p><div class="credits"><span>Tracking</span><span>Beat production</span><span>Artist development</span></div><a href="#book">Book with Sasha</a></article>
+        <article class="eng"><div class="mono" aria-hidden="true">NC</div><div><div class="role">Mastering engineer</div><h3>Noor Calder</h3></div><p>Final polish for streaming and radio. Delivers loudness-matched masters with a short written note on every release.</p><div class="credits"><span>Mastering</span><span>Streaming delivery</span><span>Stems</span></div><a href="#book">Book with Noor</a></article>
+      </div>
+      <p class="team-cap">Sample profiles. Replace with the studio's real engineers, photos and credits.</p>
     </div>
   </section>
 
@@ -626,6 +656,12 @@ img{max-width:100%}
         <details><summary>How long does mixing take?</summary><p>Most songs come back within 48 hours with one round of revisions included. Rush turnaround is possible when the schedule allows.</p></details>
         <details><summary>Do I need to pay up front?</summary><p>A 30% deposit holds your slot. The balance is due at the end of the session, before files are released.</p></details>
         <details><summary>What files do I get?</summary><p>A WAV master and an MP3 of every song. Instrumentals and acapellas are available on request.</p></details>
+        <details><summary>What is your cancellation policy?</summary><p>Move or cancel up to 48 hours before your session at no charge. Inside 48 hours the deposit is kept, and it can be applied to a rescheduled session once.</p></details>
+        <details><summary>Is there a minimum booking length?</summary><p>Recording and vocal sessions start at two hours. Mixing and mastering are priced per song, with no minimum.</p></details>
+        <details><summary>What if I arrive late?</summary><p>We hold your slot for 20 minutes. After that the session is shortened to the time remaining, because the room is usually booked straight after.</p></details>
+        <details><summary>How many revisions are included?</summary><p>Every mix includes one round of revisions. Further rounds are charged at a reduced rate. Send notes in one message so changes can be made together.</p></details>
+        <details><summary>Who owns the music?</summary><p>You do. Recording, mixing and mastering work leaves the studio with all rights belonging to the artist. A release agreement only applies if you are signed.</p></details>
+        <details><summary>How do I pay?</summary><p>Card, bank transfer or mobile money. The deposit is requested when you confirm the booking, and a receipt is sent for every payment.</p></details>
         <details><summary>How do I get signed?</summary><p>Book a session and bring your strongest material. We look for artists with a distinct sound and a clear direction, and we invite the ones we believe in to discuss a release agreement.</p></details>
       </div>
     </div>
@@ -1007,6 +1043,18 @@ const SERVICES=[
 ];
 const K=n=>"$"+Math.round(n).toLocaleString("en-US");
 $("#svcList").innerHTML=SERVICES.map(s=>`<div class="svc"><h3>${s.name}</h3><p>${s.desc}</p><div class="from"><small>${s.rate?"From":"Apply"}</small>${s.rate?K(s.rate)+" / "+s.unit:"Talk to us"}</div></div>`).join("");
+
+const SPECS={
+ live:{n:"Live room",a:"32 m\u00b2",d:"Space for a full band of up to eight, with a drum riser, an upright piano and isolated amplifier positions.",l:["Capacity: up to 8 musicians","Drum riser and upright piano","3 isolated amplifier positions","Variable acoustics: absorptive and reflective panels","Sightline to control room","16-channel tie line to the console"]},
+ control:{n:"Control room",a:"18 m\u00b2",d:"Treated and tuned for accurate monitoring. Where mixes get made and decisions get checked.",l:["Capacity: 4 seated","8 in studio monitors with 10 in sub","Small-speaker check system","Hardware compressors and tube preamps","Acoustic treatment tuned and measured","Producer seating behind the engineer"]},
+ booth:{n:"Vocal booth",a:"6 m\u00b2",d:"Dead-quiet and dry for lead vocals, voiceover and podcast hosts.",l:["Capacity: 2 people","Large-diaphragm condenser and dynamic mic options","Headphone mix controlled from the booth","Reflection filter and pop shield","Sightline to control room","Suitable for voiceover and podcast recording"]},
+ lounge:{n:"Lounge",a:"Open plan",d:"A relaxed space to prepare, write and listen back to the day's takes on the main speakers.",l:["Seating for the whole session group","Playback of the day's takes","Writing and preparation space","Refreshments","Wi-Fi","Adjoins the live room"]}
+};
+function specSheet(k){const r=SPECS[k],esc=t=>t.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+ const h='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(CFG.name)+' \u2014 '+esc(r.n)+' spec sheet</title><style>body{font:16px/1.6 Georgia,serif;max-width:640px;margin:48px auto;padding:0 20px;color:#14090a}h1{font:700 30px/1.1 Helvetica,Arial,sans-serif;margin:0 0 4px}.k{font:12px Helvetica,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#777}li{padding:6px 0;border-bottom:1px solid #ddd}ul{list-style:none;padding:0}footer{margin-top:40px;font-size:13px;color:#555}</style></head><body><div class="k">'+esc(CFG.name)+' \u00b7 Room spec sheet</div><h1>'+esc(r.n)+'</h1><p class="k">'+esc(r.a)+'</p><p>'+esc(r.d)+'</p><ul>'+r.l.map(x=>"<li>"+esc(x)+"</li>").join("")+'</ul><footer>To book, contact '+esc(CFG.email)+'. Sample specification; confirm final details with the studio.</footer></body>';
+ const u=URL.createObjectURL(new Blob([h],{type:"text/html"})),a=document.createElement("a");
+ a.href=u;a.download=CFG.name.toLowerCase().replace(/\s+/g,"-")+"-"+k+"-spec.html";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);}
+$$("[data-spec]").forEach(b=>b.addEventListener("click",()=>specSheet(b.dataset.spec)));
 function hiRoom(r){$$(".rm").forEach(e=>e.classList.toggle("on",!!r&&e.id==="p-"+r));$$(".room").forEach(e=>e.classList.toggle("on",!!r&&e.dataset.room===r));}
 $$(".room").forEach(b=>{["mouseenter","focus"].forEach(ev=>b.addEventListener(ev,()=>hiRoom(b.dataset.room)));["mouseleave","blur"].forEach(ev=>b.addEventListener(ev,()=>hiRoom(null)));b.addEventListener("click",()=>hiRoom(b.dataset.room));});
 
@@ -1070,5 +1118,4 @@ ui();requestAnimationFrame(frame);
 })();
 </script>
 
-</body>
-</html>
+</body></html>
